@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/styleT5.css">
+    <title>Tarea 5</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="contenedor_cabecera">
+            <ul class="contenedor_instrucciones">Tarea #5 Scheme Investigar:
+                <li class="contenedor_dato">Símbolos, sintaxis, esqueleto de los programas</li>
+                <li class="contenedor_dato">Aplicación a descargar para editar y ejecutar</li>
+                <li class="contenedor_dato">A que tipo de paradigma pertenece</li>
+                <li class="contenedor_dato">Un ejemplo de un programa escrito en ese lenguaje</li>
+            </ul>
+        </div>
+        <div class="contenedor_info">
+                <span class="contenedor_texto">
+                    <h3>Símbolos</h3>
+                    Un símbolo es lo que en otros lenguajes se denomina identificador. En Scheme los símbolos e identificadores pueden contener caracteres internacionales (Unicode, UTF-8). 
+                    <br>
+                    El intérprete DrScheme guarda los ficheros de texto en esa codificación. <br>
+                    <ul>
+                        <li>'hola</li>
+                        <li>(symbol 'hola-que<>)</li>
+                        <li>(symbol->string 'hola-que<>)</li>
+                        <li>'mañana</li>
+                        <li>'lápiz ; aunque sea posible, no vamos a usar acentos en los símbolos</li>
+                        <li>; pero sí en los comentarios</li>
+                        <li>(symbol? 'hola) ; #t</li>
+                        <li>(symbol? "hola") ; #f</li>
+                        <li>(symbol?  #f) ; #f</li>
+                        <li>(equal? 'hola 'hola)</li>
+                        <li>(equal? 'hola "hola")</li>
+                    </ul>
+                    <br> <br>
+                    Diferencia entre símbolos y cadenas: <br>
+                    un símbolo (identificador) es un objeto simple y una cadena es un objeto compuesto. El intérprete de Scheme codifica un símbolo mediante un único número, su valor hash. Otra diferencia bastante clara: un símbolo no puede contener un espacio, pero una cadena sí.
+                    <br><br>
+                    <h3>Sintaxis</h3>
+                    La sintaxis de define es: <br>
+                    (define <símbolo> <expresión>) <br> <br>
+                    La forma especial (define símbolo expresión) se evalúa así:
+                    <ul>
+                        <li>Evaluar expresión</li>
+                        <li>Asociar el valor resultante de la evaluación anterior con el símbolo</li>
+                    </ul>
+                    <br>
+                    El otro uso de define es para definir nuevos procedimientos (aunque ya veremos más adelante que Scheme utiliza siempre el define anterior, y que esta forma del define no es más que azúcar sintáctico).
+                    La sintaxis para definir un procedimiento es: <br>
+                    (define (<nombre-funcion> <args>) <cuerpo>) <br>
+                    Se define una función con el nombre, argumentos y cuerpo dados. El cuerpo es una expresión de Scheme. El resultado de evaluar la última expresión del cuerpo es el valor devuelto por a la función.
+                    <br><br>
+                    <h3>Esqueletos</h3>
+                    La sintaxis de if es: <br>
+                    (if <condición> <exp-verdad> <exp-falso>) <br><br>
+                    El funcionamiento de la forma especial es: <br>
+                    <ul>
+                        <li>Evaluar condición</li>
+                        <li>Si el resultado es true evaluar exp-verdad</li>
+                        <li>Sino evaluar exp-falso</li>
+                        <li>(if (> 3 2) (* 2 3) (/ 2 0))</li>
+                    </ul>
+                    En la expresión anterior la condición es verdadera, por lo que no se evalúa la expresión (/ 2 0) que daría un error. Se evalúa sólo (* 2 3) y se devuelve su resultado.
+                    <br><br>
+                    La sintaxis de cond es: <br>
+                    (cond <br>
+                      (<exp-cond-1> <exp-consec-1>) <br>
+                      (<exp-cond-2> <exp-consec-2>) <br>
+                      ... <br>
+                      (else <exp-consec-else>)) <br> <br>
+                    La semántica es la siguiente: <br>
+                    Se evalúan de forma ordenada todas las expresiones hasta que una de ellas devuelva #t
+                    Si alguna expresión devuelve #t, se devuelve el valor del consecuente de esa expresión
+                    Si ninguna expresión es cierta, se devuelve el valor resultante de evaluar el consecuente del 'else'. En cualquier caso, sólo se evalúa un único consecuente del cond
+                    <br><br>
+                    <h3>Aplicación de edición o entorno</h3>
+                    La versión de Microsoft Windows de MIT / GNU Scheme se ejecuta como una aplicación basada en gráficos. El esquema normalmente se inicia utilizando accesos directos; el instalador genera automáticamente varios accesos directos predefinidos diferentes para su conveniencia.
+                    El resto de esta sección ofrece algunos consejos sobre cómo configurar accesos directos que ejecutan Scheme. Si no está familiarizado con este concepto, debe leerlo en la ayuda del sistema.
+                    <ul>
+                        <li>En Windows, los accesos directos pueden ser comunes o personales. Al establecer accesos directos comunes, es importante hacer que las propiedades de acceso directo sean independientes de los caprichos del entorno del usuario que las ejecuta.</li>
+                        <li>Dele al atajo una descripción precisa.</li>
+                        <li>Utilice un nombre de ruta absoluto para mit-scheme.exe en la línea de comando de acceso directo.</li>
+                        <li>Si especifica la opción de línea de comando --library , entonces no tiene que preocuparse por la variable de entorno MITSCHEME_LIBRARY_PATH .</li>
+                        <li>Establezca el directorio de trabajo del acceso directo en algo sensato. En Windows puede usar ' % HOMEDRIVE %% HOMEPATH% ' para hacer que Scheme se inicie en el directorio de inicio del usuario.</li>
+                        <li>Hay varios íconos disponibles en el ejecutable de Scheme: elija uno que mejor represente las opciones dadas en la línea de comando.</li>
+                        <li>Si desea que el acceso directo inicie Edwin automáticamente, coloque --edit al final de la línea de comando.</li>
+                    </ul>
+                    <br><br>
+                    <h3>Tipo de paradigma</h3>
+                    Programa funcional <br>
+                    "El estilo de programación que enfatiza la
+                    evaluación de expresiones, antes que la ejecución
+                    de comandos "
+                    está constituido enteramente por funciones; el programa principal es una función que toma como argumento la entrada al programa y genera la salida del programa como su resultado. Típicamente, la función principal se define en términos de otras funciones, y éstas, a su vez, en término de más funciones; esta cadena finaliza en funciones predefinidas o primitivas.
+                    <br><br>
+                    <h3>Ejemplo</h3>
+                    (let ((HOLA MUNDO <br>
+                             (lambda () <br>
+                               (display "Hola, mundo") <br>
+                               (newline)))) <br>
+                        (hola-mundo)) <br>
+                    Ó <br>
+                    (display "Hola, mundo\n") <br>
+                    
+                </span>
+        </div>
+        <div class="contenedor_boton">
+            <button class="contenedor_btn"><a href="../../Tareas/MenuTareas.html">Menu Tareas</a></button>
+        </div>    
+        <div class="contenedor_boton">
+            <button class="contenedor_btn"><a href="../../Tareas/Tarea4/Tarea4.html">Tarea 4</a></button>
+        </div>
+        <div class="contenedor_boton">  
+            <button class="contenedor_btn"><a href="../../Tareas/Tarea6/Tarea6.html">Tarea 6</a></button>
+        </div>
+    </div>
+</body>
+</html>

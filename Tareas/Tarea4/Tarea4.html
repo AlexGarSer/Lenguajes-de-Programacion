@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/styleT4.css">
+    <title>Tarea 4</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="contenedor_cabecera">
+            <ul class="contenedor_instrucciones">Tarea #4 Python Investigar:
+                <li class="contenedor_dato">Símbolos, sintaxis, esqueleto de los programas</li>
+                <li class="contenedor_dato">Aplicación a descargar para editar y ejecutar</li>
+                <li class="contenedor_dato">A que tipo de paradigma pertenece</li>
+                <li class="contenedor_dato">Un ejemplo de un programa escrito en ese lenguaje</li>
+            </ul>
+        </div>
+        <div class="contenedor_info">
+                <span class="contenedor_texto">
+                    <h3>Símbolos</h3>
+                    Operadores de comparación <br>
+                    Los operadores de comparación se usan para evaluar expresiones que solo pueden tener 2 resultados, estos resultados son verdadero o falso (true o false) y son los siguientes.
+                    <ul>
+                        <li>== , evalúa como verdadero si 2 variables son iguales</li>
+                        <li>!= ,evalúa como verdadero si 2 variables son diferentes</li>
+                        <li><> , lo mismo que !=</li>
+                        <li>> , verdadero si el operador a la izquierda es mayor que el de la derecha</li>
+                        <li>< , verdadero si el operador a la izquierda es menor que el de la derecha</li>
+                        <li>>= verdadero si el operador a la izquierda es mayor o igual al de la derecha</li>
+                        <li><= verdadero si el operador a la izquierda es menor o igual al de la derecha</li>
+                    </ul>
+                    <h3>Sintaxis</h3>
+                    Modo interactivo y modo script <br>
+                    Hay dos maneras de trabajar con Python, mediante el modo interactivo y mediante el modo script.
+                    <br>
+                    En el primero, ejecutamos la orden en tiempo real, mientras que, con el segundo, escribimos el código en Python y luego lo ejecutamos con el intérprete.
+                    <br>
+                    En el modo interactivo, debemos activar el intérprete Python escribiendo python en la línea de comandos. <br> <br> ¡Una vez puesto en marcha, ya podemos ejecutar órdenes, como la clásica print “Hello, Python!”.
+                    A medida que empecemos a programar empleando el lenguaje Python, nos será más práctico emplear un script donde hemos introducido todas las órdenes a ejecutar. Así, una vez situada la línea de comandos en la carpeta donde se encuentra el script, lo ejecutamos con la orden python nombredelscript.py.
+                    <br><br>
+                    Identificadores Python: <br>
+                    Los identificadores sirven precisamente para eso, para identificar una variable, función, clase, módulo u objeto. Suelen empezar con letras, en mayúscula o minúscula, o con un guión bajo seguido de un cero y varias letras o números.
+                    Hay que tener varias cosas en cuenta, como que Python diferencia entre mayúsculas y minúsculas o que no admite caracteres de puntuación como @, $ o %.
+                    Los nombres de clase empiezan con una letra mayúscula. Los demás identificadores empiezan con minúscula. Si el identificador empieza un guion bajo, significa que es privado. Si empieza con dos guiones bajos, se trata de un identificador privado. Si el identificador finaliza con dos guiones bajos, el identificador es un nombre especial definido por lenguaje.
+                    <br> <br>
+                    Palabras reservadas: <br>
+                    Hay una serie de palabras que no podemos emplear como constantes o variables o como nombre identificador. Son todas en minúsculas y han sido reservadas por el lenguaje Python.
+                    En concreto, las palabras reservadas son: and, assert, break, class, continue, def, del, elif, else, except, exec, finally, for, from, global, if, imoort, in, is, lambda, not, or, pass, print, raise, return, try, while, with, yield.
+                    <br><br>
+                    Estructura de las líneas: <br>
+                    Un programa codificado con lenguaje Python está dividido en varias líneas lógicas y cada una de ellas finaliza con una nueva línea. Si la línea está en blanco, es ignorada por el intérprete de Python.
+                    Por otra parte, las órdenes y líneas se agrupan unas dentro de otras mediante sangrado o espaciado. Y para unir dos o más líneas, se emplea la barra inclinada hacia la izquierda.
+                    Otra posibilidad es que queramos realizar varias acciones o peticiones en una única línea. Para ello, podemos combinar todas las instancias empleando como separador el símbolo de punto y coma.
+                    <br><br>
+                    Comentarios y citas: <br>
+                    En Python, los comentarios empiezan con el carácter hash (#). Nosotros podemos leernos, es más, deberíamos, ya que nos aportarán información sobre el resto de código, pero el intérprete lo ignorará.
+                    Los comentarios pueden incluirse en una línea propia o al lado de una orden. Siempre que tenga el símbolo indicado, Python lo interpretará como comentario y no como código válido.
+                    En cuanto a las citas, Python admite las comillas simples o dobles. El texto incluido dentro de las comillas será el que se mostrará en pantalla o el que se tendrá en cuenta para la orden programada. Si necesitamos citar un texto extenso, nos será de utilidad las triples comillas, que permiten citar textos que ocupan varias líneas.
+                    <br><br>
+                    <h3>Esqueletos</h3>
+                    Diferentes tipos de métodos en python: <br>
+                    En Python existen 3 tipos de métodos. Los métodos estáticos, de clase y de instancia. Cada uno de ellos tienen características diferentes y se pueden utilizar en distintas situaciones.
+                    <br><br>
+                    Métodos Estáticos: <br>
+                    Para poder crear un método estático es necesario anteponer @staticmethod para así indicarle a Python que el método debe de ser estático. Las características principales de un método estático es que pueden ser llamados sin tener una instancia de la clase, además este tipo de métodos no tienen acceso al exterior, por lo cual no pueden acceder a ningún otro atributo o llamar a ninguna otra función dentro de la clase.
+                    Un método estático puede ser utilizado cuando se tiene una clase, pero no necesariamente se tiene una instancia para poder ingresar al método. Por ejemplo, si se tiene una clase Math y se tiene un método llamado factorial (calcula la factorial de un número dado). Probablemente no se necesite tener una instancia específica para llamar al método, debido a esto se podría decidir hacer este método estático.
+                    <br><br>
+                    Método de clase: <br>
+                    Para indicarle a Python que el método deberá ser un método de clase se debe de anteponer @classmethod, este método comparte una característica con el método estático, dicha característica es que este método puede ser llamado sin crear una instancia de la clase. La diferencia recae en la capacidad de acceder otros métodos y atributos de la clase. Sin embargo, este tipo de métodos no tienen accesos a atributos de instancia ya que ninguna instancia fue creada para poder utilizarlos.
+                    <br><br>
+                    Métodos de instancia <br>
+                    Este método solamente puede ser llamado si se tiene una instancia de la clase. Una vez que se creó una instancia de la clase, se podrá ingresar a los métodos de instancia. Un método de instancia es capaz de crear, obtener y cambiar los atributos de instancia y a su vez de llamar otros métodos de instancia y clase.
+                    <br><br>
+                    <h3>Aplicación de edición o entorno</h3>
+                    Versión de Python 3 <br>
+                    El entorno de ejecución de Python 3.7 usa la última versión estable de Python 3.7. App Engine se actualiza de forma automática a nuevas revisiones menores luego de la implementación, sin embargo, no actualizará la versión principal de forma automática.
+                    Por ejemplo, tu aplicación podría implementarse en Python 3.7.0 y, luego, actualizarse de forma automática a la versión 3.7.1, pero no se actualizará de forma automática a la versión 3.8.0.
+                    En la actualidad, Python 3.7 es el único entorno de ejecución de Python 3 disponible en el entorno estándar de App Engine.
+                    <br><br>
+                    Dependencias <br>
+                    Durante la implementación, App Engine usa el administrador de paquetes de Python pip para instalar las dependencias definidas en el archivo de metadatos requirements.txt ubicado en el directorio raíz de tu proyecto. No es necesario subir dependencias porque App Engine realiza una instalación nueva.
+                    Actualmente, no se admite la especificación de dependencias que utiliza el estándar Pipfile/Pipfile.lock y tu proyecto no debe tener estos archivos presentes.
+                    <br><br>
+                    <h3>Tipo de paradigma</h3>
+                    Python es un lenguaje de programación multiparadigma. Esto significa que más que forzar a los programadores a adoptar un estilo particular de programación, permite varios estilos: programación orientada a objetos, programación imperativa y programación funcional. Otros paradigmas están soportados mediante el uso de extensiones.
+                    Python usa tipado dinámico y conteo de referencias para la administración de memoria.
+                    Una característica importante de Python es la resolución dinámica de nombres; es decir, lo que enlaza un método y un nombre de variable durante la ejecución del programa (también llamado enlace dinámico de métodos).
+                    Otro objetivo del diseño del lenguaje es la facilidad de extensión. Se pueden escribir nuevos módulos fácilmente en C o C++. Python puede incluirse en aplicaciones que necesitan una interfaz programable.
+                    Aunque la programación en Python podría considerarse en algunas situaciones hostil a la programación funcional tradicional del Lisp, existen bastantes analogías entre Python y los lenguajes minimalistas de la familia Lisp como puede ser Scheme.
+                    <br><br>
+                    <h3>Ejemplo</h3>
+                    print(“Hola Mundo”)
+                    
+                </span>
+        </div>
+        <div class="contenedor_boton">
+            <button class="contenedor_btn"><a href="../../Tareas/MenuTareas.html">Menu Tareas</a></button>
+        </div>    
+        <div class="contenedor_boton">
+            <button class="contenedor_btn"><a href="../../Tareas/Tarea3/Tarea3.html">Tarea 3</a></button>
+        </div>
+        <div class="contenedor_boton">  
+            <button class="contenedor_btn"><a href="../../Tareas/Tarea5/Tarea5.html">Tarea 5</a></button>
+        </div>
+    </div>
+</body>
+</html>

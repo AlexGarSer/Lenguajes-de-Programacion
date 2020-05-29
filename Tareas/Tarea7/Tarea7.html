@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/styleT7.css">
+    <title>Tarea 7</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="contenedor_cabecera">
+            <ul class="contenedor_instrucciones">Tarea #7 R Investigar:
+                <li class="contenedor_dato">Símbolos, sintaxis, esqueleto de los programas</li>
+                <li class="contenedor_dato">Aplicación a descargar para editar y ejecutar</li>
+                <li class="contenedor_dato">A que tipo de paradigma pertenece</li>
+                <li class="contenedor_dato">Un ejemplo de un programa escrito en ese lenguaje</li>
+            </ul>
+        </div>
+        <div class="contenedor_info">
+                <span class="contenedor_texto">
+                    <h3>Símbolos</h3>
+                    Los símbolos se refieren a objetos R. El nombre de cualquier objeto R suele ser un símbolo.
+                    <br>
+                    Los símbolos pueden ser creado a través de las funciones as.name y quote.
+                    <br>
+                    Los símbolos tienen modo "nombre", modo almacenamiento "símbolo" y tipo "símbolo". Ellos pueden ser
+                    coaccionado hacia y desde cadenas de caracteres usando as.character y as.name. Aparecen naturalmente
+                    como átomos de expresiones analizadas, intente p. as.list (cita (x + y))
+                    <br><br>
+                    <h3>Sintaxis</h3>
+                    La sintaxis para escribir una función es:
+                    <br>
+                    función (arglista) cuerpo
+                    <br><br>
+                    El primer componente de la declaración de función es la función de palabra clave que le indica a R que desea crear una función.
+                    Una lista de argumentos es una lista separada por comas de argumentos formales. Un argumento formal puede ser un símbolo, una declaración de la forma "símbolo = expresión" o el argumento formal especial "...".
+                    <br><br>
+                    El cuerpo puede ser cualquier expresión R válida.
+                    <br>
+                    En general, el cuerpo es un grupo de expresiones contenidas en llaves (‘{’ y ‘}’).
+                    <br>
+                    En general, las funciones se asignan a símbolos, pero no es necesario que lo sean. El valor devuelto por la llamada a la función es una función. Si no se le asigna un nombre, se lo denomina función anónima. Las funciones anónimas se usan con mayor frecuencia como argumentos para otras funciones, como la familia de aplicación o la externa.
+                    Aquí hay una función simple: echo <- function (x) print (x). Entonces echo es una función que toma un solo argumento y cuando se invoca echo imprime su argumento.
+                    <br><br>
+                    <h3>Esqueletos</h3>
+                    R posee un mecanismo de función genérica simple que puede usarse para un estilo de programación orientado a objetos. La distribución del método se realiza en función de la (s) clase (s) del primer argumento de la función genérica o del objeto suministrado como argumento de UseMethod o NextMethod.
+                    <br>
+                    Uso <br>
+                    UseMethod (genérico, objeto) <br>
+                    NextMethod (genérico = NULL, objeto = NULL, ...) <br>
+                    Argumentos 
+                    <ul>
+                        <li>Genérico: una cadena de caracteres que nombra una función (y no un operador integrado). Necesario para UseMethod.</li>
+                        <li>Objeto: for UseMethod: un objeto cuya clase determinará el método que se enviará. El valor predeterminado es el primer argumento de la función de cierre.</li>
+                    </ul>
+                    <br><br>
+                    <h3>Aplicación de edición o entorno</h3>
+                    R es un entorno de software libre para computación estadística y gráficos. Compila y se ejecuta en una amplia variedad de plataformas UNIX, Windows y MacOS.
+                    Versión actual R 4.0.0
+                    <br><br>
+                    <h3>Tipo de paradigma</h3>
+                    R pertenece a una clase de lenguajes de programación en los que las subrutinas tienen la capacidad de modificar o construir otras subrutinas y evaluar el resultado como parte integral del lenguaje en sí.
+                    <br>
+                    Esto es similar a Lisp y Scheme y otros lenguajes de la variedad de "programación funcional", pero en contraste con FORTRAN y la familia ALGOL. La familia Lisp lleva esta característica al extremo mediante el paradigma "todo es una lista" en el que no hay distinción entre programas y datos.
+                    R presenta una interfaz de programación más amigable que Lisp, al menos para alguien acostumbrado a fórmulas matemáticas y estructuras de control tipo C, pero el motor es realmente muy similar a Lisp.
+                    <br> <br>
+                    R permite el acceso directo a expresiones y funciones analizadas y le permite modificarlas y ejecutarlas posteriormente, o crear funciones completamente nuevas desde cero.
+                    Hay una serie de aplicaciones estándar de esta instalación, como el cálculo de derivadas analíticas de expresiones o la generación de funciones polinómicas a partir de un vector de coeficientes. Sin embargo, también hay usos que son mucho más fundamentales para el funcionamiento de la parte interpretada de R.
+                    <br><br>
+                    Algunos de estos son esenciales para la reutilización de funciones como componentes en otras funciones, como las llamadas (ciertamente no muy bonitas) a model.frame que se construyen en varias rutinas de modelado y trazado. Otros usos simplemente permiten interfaces elegantes para funcionalidades útiles. Como ejemplo, considere la función de curva, que le permite dibujar la gráfica de una función dada como una expresión como sin (x) o las facilidades para trazar expresiones matemáticas.
+                    <br><br>
+                    <h3>Ejemplo</h3>
+                    > print("Hello World!")
+                    <br>
+                    "Hello World!"
+
+                </span>
+        </div>
+        <div class="contenedor_boton">
+            <button class="contenedor_btn"><a href="../../Tareas/MenuTareas.html">Menu Tareas</a></button>
+        </div>    
+        <div class="contenedor_boton">
+            <button class="contenedor_btn"><a href="../../Tareas/Tarea6/Tarea6.html">Tarea 6</a></button>
+        </div>
+        <div class="contenedor_boton">  
+            <button class="contenedor_btn"><a href="../../Tareas/Tarea8/Tarea8.html">Tarea 8</a></button>
+        </div>
+    </div>
+</body>
+</html>

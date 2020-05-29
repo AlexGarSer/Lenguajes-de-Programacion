@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/styleT3.css">
+    <title>Tarea 3</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="contenedor_cabecera">
+            <ul class="contenedor_instrucciones">Tarea #3 Prolog Investigar:
+                <li class="contenedor_dato">Símbolos, sintaxis, esqueleto de los programas</li>
+                <li class="contenedor_dato">Aplicación a descargar para editar y ejecutar</li>
+                <li class="contenedor_dato">A que tipo de paradigma pertenece</li>
+                <li class="contenedor_dato">Un ejemplo de un programa escrito en ese lenguaje</li>
+            </ul>
+        </div>
+        <div class="contenedor_info">
+                <span class="contenedor_texto">
+                <h3>Símbolos</h3>
+                En Prolog, símbolos (o átomos) son los tipos de datos primitivos primarios, similares a los números.
+                La notación exacta puede variar en diferentes dialectos de Prolog.
+                Sin embargo, siempre es bastante simple (no hay cotizaciones o los caracteres iniciales especiales son necesarias).
+                <br>
+                A diferencia de otros idiomas, es posible dar símbolos algún significado mediante la creación de hechos y / o las normas de algunos de Prolog.
+                <br>
+                Ejemplos:
+                El siguiente ejemplo demuestra dos hechos (que describe lo que el padre es) y una regla (que describe el significado de los hermanos). Estas tres frases utilizan símbolos (padre, Zeus, Hermes, Perseo y hermano) y algunas variables abstractas (X, Y y Z). La madre relación se ha omitido para mayor claridad.
+                <br>
+                father(zeus, hermes).
+                father(zeus, perseus).
+                <br>
+                sibling(X, Y) :- father(Z, X), father(Z, Y).
+                <br><br>
+                <h3>Sintaxis</h3>
+                Un programa Prolog es un conjunto de cláusulas de Horn (hechos y reglas) donde:
+                <ul>
+                    <li>Todas las cláusulas acaban con . </li>
+                    <li>El símbolo ← se escribe como :- que se lee como si (condicional). En los hechos no es necesario (basta poner el átomo y .)</li>
+                    <li>Los nombres de predicado y función siguen las pautas habituales de los identificadores pero comienzan con minúscula .</li>
+                    <li>Los nombres de variable también siguen esas pautas, pero comienzan por mayúscula . </li>
+                    <li>Los átomos en el cuerpo de las reglas se separan mediante comas , que se leen como y.</li>
+                </ul> 
+                <br>
+                <h3>Esqueletos</h3>
+                Declaracion de metodos:<br>
+                Las cláusulas de método se declaran de forma similar a las cláusulas Prolog. Por lo tanto, pueden ser hechos o cláusulas con cuerpo no vacío.
+                Los objetivos en el cuerpo conservan las estructuras de control normales en Prolog (conjunción, disjunción, cut, negación, unificación).
+                Los átomos en el cuerpo de una cláusula de método pueden ser alguno de los siguientes:  : goal → llama al predicado goal en el módulo origen  m : goal → llama al predicado goal en el módulo m  goal → envía el mensaje goal al objeto Self  :: goal → envía el mensaje goal a un método que puede estar definido localmente o heredado.
+                <br><br>
+                Metodos Universales:<br>
+                Estos métodos están definidos localmente para todo objeto de Prolog Objects: <br>
+                super(?Object, ?NotInheritList)
+                Object es un superobject de Self. super(Object) se traduce a super(Object, [])
+                attributes(+Attributes)
+                Attributes es una lista de términos compuestos que especifican los atributos locales de Self y sus
+                valores iniciales.
+                <br><br>
+                Metodos Inlined:<br>
+                Estos métodos se compilan inline (las llamadas se reemplazan por definiciones). <br>
+                Esto implica que tienen semántica fija y no pueden ser redefinidos. <br>
+                self(?Self)
+                Unifica Self con “self”
+                get(+Attribute) <br>
+                Obtiene los valores de los atributos definidos con el functor de Attribute. Los valores son
+                unificados con los argumentos de Attribute.
+                set(+Attribute) <br>
+                Modifica los valores de los atributos definidos con el functor de Attribute. Los valores son
+                tomados de los argumentos de Attribute.
+                <br><br>
+                Prototipo: Object <br>
+                El objeto object provee métodos disponibles para todos los otros objetos por delegación.
+                Algunos de ellos son1:
+                super(?Object)
+                Object es padre de Self.
+                sub(?Object)
+                Object es padre de Self.
+                self(?Self)
+                Unifica Self con “self”.
+                object(?Object)
+                Uno de los objetos definidos en el sistema es Object
+                static
+                Self es un objeto estático
+                dynamic
+                Self es un objeto dinámico
+                dynamic ?Nombre/?Aridad
+                 ?Nombre/?Aridad es un método dinámico de Self.
+                static ?Nombre/?Aridad
+                 ?Nombre/?Aridad es un método estático de Self.
+                new(?Object)
+                Crea un nuevo objeto dinámico Object del cual Self será el prototipo. Object puede ser un
+                término compuesto, un átomo o una variable. En el último caso, el método genera un nombre
+                único para Object.
+                instance(?Instance)
+                Crea una nueva instancia Instance, de la cual Self será clase. Instance puede ser un término
+                compuesto, un átomo o una variable. En el último caso, el método genera un nombre único para
+                Instance.
+                has_instance(?Instance)
+                Self tiene la instancia Instante
+                assert(+Fact)
+                Agrega un nuevo Fact en Self. Si Self es estático, el nombre y la aridad de Fact deben ser
+                declarados como dinámicos.
+                <br><br>
+                PROTOTIPO: UTILITY <br>
+                El objeto utility provee métodos adicionales.
+                Algunos de sus métodos son: <br>
+                subs(?Objects) <br>
+                Devuelve todos los hijos de Self <br>
+                supers(?Objects) <br>
+                 Devuelve todos los padres de Self <br>
+                objects(?Objects) <br>
+                 Devuelve una lista de todos los objetos <br>
+                methods(?Methods <br>)
+                 Devuelve una lista de todos los métodos de Self <br>
+                ancestor(?Object) <br>
+                 Uno de los ancestros de Self es Object <br>
+                and_cast(+Objects,?Message) <br>
+                Envía el mismo mensaje a todos los objetos en la lista Objects <br>
+                or_cast(+Objects,?Message) <br>
+                Envía el mismo mensaje a uno de los objetos de Objects, haciendo backtracking entre los
+                diferentes objetos. <br><br>
+                <h3>Aplicación de edición o entorno</h3>
+                SWI-Prolog se distribuye como un paquete binario específico de plataforma para plataformas populares (actualmente MS-Windows y MacOS X). Para Ubuntu Linux proporcionamos un PPA
+                El paquete fuente proporciona la suite de autoconf / make de GNU para configurar y construir completamente automáticamente en muchas plataformas.
+                <br>Se basa en una amplia gama de sistemas de 32 y 64 bits con un compilador ANSI C. La versión de MS-Windows está construida usando MinGW como un compilador cruzado en Linux.
+                <br> Vea el archivo README .mingw en el directorio de nivel superior.
+                Las versiones estables de SWI-Prolog tienen un número de versión menor par (7.0.x, 7.2.x, 7.4.x, ...) y el desarrollo lanza un número de versión menor impar (7.1.x, 7.3.x, ...). Las versiones de desarrollo se lanzan con frecuencia, generalmente cada dos semanas). Se inicia un nuevo ciclo estable cuando la versión de desarrollo ha mejorado lo suficiente como para que la actualización sea valiosa para muchos usuarios y los grandes cambios en las versiones de desarrollo han demostrado ser estables. A partir de 7.4.x, planeamos proporcionar soluciones regulares de estabilidad y seguridad para la versión estable y evitaremos cambios incompatibles.
+                Todas las fuentes están disponibles en GitHub .
+                <br>El repositorio swipl.git se utiliza para las versiones estables y el repositorio swipl-devel.git para la serie de desarrollo. Los lanzamientos están etiquetados * V * Major.Minor.Patch .
+                8.1.0 <br>
+                Serie de desarrollo actual.
+                <br> <br>
+                <h3>Tipo de paradigma:</h3>
+                Prolog se enmarca en el paradigma de los lenguajes lógicos y declarativos, lo que lo diferencia enormemente de otros lenguajes más populares tales como Fortran, Pascal, C o Java.
+                <br><br>
+                <h3>Ejemplo:</h3>
+                Código: ?- write('¡Hola Mundo!'). <br><br>
+                Respuesta:  ¡Hola Mundo! true.
+                </span>
+        </div>
+        <div class="contenedor_boton">
+            <button class="contenedor_btn"><a href="../../Tareas/MenuTareas.html">Menu Tareas</a></button>
+        </div>    
+        <div class="contenedor_boton">
+            <button class="contenedor_btn"><a href="../../Tareas/Tarea2/Tarea2.html">Tarea 2</a></button>
+        </div>
+        <div class="contenedor_boton">  
+            <button class="contenedor_btn"><a href="../../Tareas/Tarea4/Tarea4.html">Tarea 4</a></button>
+        </div>
+    </div>
+</body>
+</html>

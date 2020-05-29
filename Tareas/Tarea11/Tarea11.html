@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/styleT10.css">
+    <title>Tarea 11</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="contenedor_cabecera">
+            <ul class="contenedor_instrucciones">Tarea #11 Serie B
+                <li class="contenedor_dato">Construya un programa en JAVA y RUBY. Que calcule e imprima la siguiente serie para los N primeros términos</li>
+            </ul>
+        </div>
+        <div class="contenedor_info">
+            <div class="contenedor_java">
+                <textarea class="contenedor_java" name="java" rows="25" cols="60">
+package Tarea11;
+
+import java.util.Scanner;
+
+public class SerieB {
+
+    private static Scanner lector = new Scanner(System.in);
+    public static void main(String[] args){
+       int n;
+       System.out.println("Ingrese la cantidad de terminos a imprimir de la serie: ");
+       n = lector.nextInt();
+    int x = 1;
+       for(int i = 0; i < n; i++){
+        if((i + 1) % 2 == 0){
+            for(int j = 0; j < x; j++){
+                System.out.print("" + (i + 1) + ", ");
+            }
+        }
+        else{
+            System.out.print("" + ((i + 1) * -1) + ", ");
+            x++;
+            }
+        }
+    }
+
+
+}                  
+                </textarea>
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea11_J1.jpg"alt="" srcset="">
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea11_J2.jpg" alt="" srcset="">
+            </div>
+            <div class="contenedor_textoJav">
+                Programa Codificado en Java
+            </div>
+            <div class="contenedor_ruby">
+                <textarea class="contenedor_rubby" name="Ruby" rows="25" cols="60">
+puts("Ingresa el numero de terminos que deses imprimir:")
+n = gets().to_f
+x = 1.to_f
+for i in (0...n)
+        i += 1
+        if(i/2 == 0)
+            for j in (0...x) 
+                print("#{i+1}, ")
+            end
+        else
+            print("#{i * -1}, ")
+            x = x + 1
+        end
+end                            
+                </textarea>
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea11_R1.jpg" alt="" srcset="">
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea11_R2.jpg" alt="" srcset="">
+            </div>
+            <div class="contenedor_textoRub">
+                Programa Codificado en Ruby
+            </div>
+        </div>
+        <div class="contenedor_boton">
+            <button class="contenedor_btn"><a href="../../Tareas/MenuTareas.html">Menu Tareas</a></button>
+        </div>    
+        <div class="contenedor_boton">
+            <button class="contenedor_btn"><a href="../../Tareas/Tarea10/Tarea10.html">Tarea 10</a></button>
+        </div>
+        <div class="contenedor_boton">  
+            <button class="contenedor_btn"><a href="../../Tareas/Tarea12/Tarea12.html">Tarea 12</a></button>
+        </div>
+    </div>
+</body>
+</html>

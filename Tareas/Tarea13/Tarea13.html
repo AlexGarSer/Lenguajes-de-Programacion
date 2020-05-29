@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/styleT13.css">
+    <title>Tarea 13</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="contenedor_cabecera">
+            <ul class="contenedor_instrucciones">Tarea #13 Busqueda en Vector
+                <li class="contenedor_dato">Elaborar un programa en JAVA y RUBY que realice una búsqueda de un número en un vector, <br> mostrando solamente un mensaje indicando cuantas veces apareció el número. Además de imprimir el vector</li>
+                <li>Ejemplo: Valor a buscar: 4 <br> “El número 4 aparece 2 veces en el vector: ” 1 4 7 9 21 4 0 2 5 2</li>
+            </ul>
+        </div>
+        <div class="contenedor_info">
+            <div class="contenedor_java">
+                <textarea class="contenedor_java" name="java" rows="25" cols="60">
+package Tarea13;
+import java.util.Random;
+import javax.swing.JOptionPane;
+public class BuVe1{
+    public static void main(String[] args) {
+        int tabla[]=new int[10];
+        double numero;
+        Random rnd=new Random();
+        int i,x=0,contador=0;
+        numero= Double.parseDouble(JOptionPane.showInputDialog("Ingresa un numero a buscar en el vector aleatorio"));
+            for(i=0;i<10;i++){
+                    x=(int)(rnd.nextDouble()*10);
+                    tabla[i]=x;
+                    System.out.println(tabla[i]);
+                    if(numero==x){
+                            contador++;}
+                    else{}
+            }
+                    if(contador!=0){
+                        System.out.println("Veces encontradas: "+contador);
+                    }
+                    else{
+                        System.out.println("No se encontró el numero, intentar de nuevo");
+                    }
+    }
+}   
+                </textarea>
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea13_J1.jpg"alt="" srcset="">
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea13_J2.jpg" alt="" srcset="">
+            </div>
+            <div class="contenedor_textoJav">
+                Programa Codificado en Java
+            </div>
+            <div class="contenedor_ruby">
+                <textarea class="contenedor_rubby" name="Ruby" rows="25" cols="60">
+    
+                </textarea>
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea13_R1.jpg" alt="" srcset="">
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea13_R2.jpg" alt="" srcset="">
+            </div>
+            <div class="contenedor_textoRub">
+                Programa Codificado en Ruby
+            </div>
+        </div>
+        <div class="contenedor_boton">
+            <button class="contenedor_btn"><a href="../../Tareas/MenuTareas.html">Menu Tareas</a></button>
+        </div>    
+        <div class="contenedor_boton">
+            <button class="contenedor_btn"><a href="../../Tareas/Tarea12/Tarea12.html">Tarea 12</a></button>
+        </div>
+        <div class="contenedor_boton">  
+            <button class="contenedor_btn"><a href="../../Tareas/Tarea14/Tarea14.html">Tarea 14</a></button>
+        </div>
+    </div>
+</body>
+</html>

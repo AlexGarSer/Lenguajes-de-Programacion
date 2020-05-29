@@ -1,0 +1,112 @@
+../../<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/styleT6.css">
+    <title>Tarea 6</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="contenedor_cabecera">
+            <ul class="contenedor_instrucciones">Tarea #6 Haskell Investigar:
+                <li class="contenedor_dato">Símbolos, sintaxis, esqueleto de los programas</li>
+                <li class="contenedor_dato">Aplicación a descargar para editar y ejecutar</li>
+                <li class="contenedor_dato">A que tipo de paradigma pertenece</li>
+                <li class="contenedor_dato">Un ejemplo de un programa escrito en ese lenguaje</li>
+            </ul>
+        </div>
+        <div class="contenedor_info">
+                <span class="contenedor_texto">
+                    <h3>Símbolos</h3>
+                    En Haskell, y en lo siguiente, "o :: t" quiere decir que el objeto "o" es miembro del tipo "t", y "t -> s" es un tipo, específicamente una función, que consume algo de tipo "t" y produce algo de tipo "s". El operador (->) se nida por el derecho, ya que "t -> s -> r" quiere decir "t -> (s -> r)".
+                    <br><br>
+                    <h3>Funciones y operadores</h3>
+                    <ul>
+                        <li>(&&) :: Bool -> Bool -> Bool. Conjunción lógica.</li>
+                        <li>(||) :: Bool -> Bool -> Bool. Disyunción lógica.</li>
+                        <li>not :: Bool -> Bool. Negación lógica.</li>
+                        <li>otherwise :: Bool. Función constante que devuelve el valor True</li>
+                    </ul>
+                    <br><br>
+                    <h3>Sintaxis</h3>
+                    Hay dos estilos principales de escritura de programas funcionales, que son compatibles con Haskell principalmente porque varios diseñadores de idiomas prefieren estos estilos diferentes.
+                    En el estilo de declaración, formula un algoritmo en términos de varias ecuaciones que deben cumplirse.
+                    En el estilo de expresión compones expresiones grandes a partir de expresiones pequeñas.
+                    <br>
+                    Comparación <br>
+                    Como ilustración para los dos estilos, Simon Peyton Jones ofrece dos implementaciones del filter función Prelude:
+                    <br>  
+                    filtro :: ( a -> Bool ) -> [ a ] -> [ a ] <br><br>
+                    Estilo de declaración <br>
+                      filtro p [] = [] <br>
+                     filtro p ( x : xs ) <br>
+                        El |  p x = x : descanso <br>
+                        El |  de lo contrario = descansar <br>
+                        dónde <br>
+                          resto = filtro p xs <br>
+                    Estilo de expresión <br>
+                      filtro = <br>
+                        \ p -> \ xs -> <br>
+                           caso xs de <br>
+                              [] -> [] <br>
+                              ( x : xs ) -> <br>
+                                 dejar descansar = filtrar p xs <br>
+                                 en si p x <br>
+                                       entonces x : descansar <br>
+                                       de lo contrario descansa <br> <br>
+                    <h3>Elementos sintácticos</h3>
+                    Hay elementos característicos de ambos estilos. <br>
+                    Estilo de declaración <br>
+                    where cláusula <br>
+                    Argumentos de función en el lado izquierdo:	f x = x * x
+                    <br>
+                    Coincidencia de patrones en definiciones de funciones:	f [] = 0
+                    <br>
+                    Guardias en las definiciones de funciones:	f [ x ] | x > 0 = 'a'
+                    <br><br>
+                    Estilo de expresión <br>
+                    let expresión <br>
+                    Abstracción lambda : <br>
+                    f = \ x -> x * x <br>
+                    Expresión de case :	f xs = case xs of [] -> 0 <br>
+                    if expresión:	f [ x ] = if x > 0 then 'a' else ...
+                    <br><br>
+                    <h3> Aplicación de edición o entorno</h3>
+                    GHC es un entorno de código abierto, compilador e interactivo de última generación para el lenguaje funcional Haskell . Destacar:
+                    <br>
+                    GHC admite todo el lenguaje Haskell 2010 más una amplia variedad de extensiones.
+                    <br>
+                    GHC tiene un soporte particularmente bueno para la concurrencia y el paralelismo, incluido el soporte para la memoria transaccional de software (STM).
+                    <br>
+                    GHC genera código rápido, particularmente para programas concurrentes. Eche un vistazo al rendimiento de GHC en The Computer Language Benchmarks Game .GHC funciona en varias plataformas, incluidas Windows, Mac, Linux, la mayoría de las variedades de Unix y varias arquitecturas de procesador diferentes. Hay instrucciones detalladas para portar GHC a una nueva plataforma.
+                    <br>
+                    GHC tiene amplias capacidades de optimización, incluida la optimización entre módulos.
+                    <br>
+                    GHC compila el código de Haskell directamente al código nativo o usando LLVM como back-end. GHC también puede generar código C como objetivo intermedio para portar a nuevas plataformas. El entorno interactivo compila Haskell para bytecode y admite la ejecución de bytecode / programas compilados.
+                    La creación de perfiles es compatible, tanto por tiempo / asignación como por varios tipos de perfiles de almacenamiento dinámico.
+                    <br>
+                    GHC viene con varias bibliotecas, y miles más están disponibles en Hackage .
+                    <br> <br>
+                    <h3>Tipo de paradigma</h3>
+                    Funcional, no estricto, modular y fuertemente tipificado.
+                    <br><br>
+                    <h3>Ejemplo</h3>
+                    module Main where
+                    main = putStrLn "¡Hola mundo!"
+
+                    
+                </span>
+        </div>
+        <div class="contenedor_boton">
+            <button class="contenedor_btn"><a href="../../Tareas/MenuTareas.html">Menu Tareas</a></button>
+        </div>    
+        <div class="contenedor_boton">
+            <button class="contenedor_btn"><a href="../../Tareas/Tarea5/Tarea5.html">Tarea 5</a></button>
+        </div>
+        <div class="contenedor_boton">  
+            <button class="contenedor_btn"><a href="../../Tareas/Tarea7/Tarea7.html">Tarea 7</a></button>
+        </div>
+    </div>
+</body>
+</html>

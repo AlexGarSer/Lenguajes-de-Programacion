@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/styleT9.css">
+    <title>Tarea 9</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="contenedor_cabecera">
+            <ul class="contenedor_instrucciones">Tarea #9 Conversión de Monedas
+                <li class="contenedor_dato">Elabore un programa en JAVA Y RUBY que a través de un Menú de opciones permita al usuario convertir de pesos a las siguientes monedas:
+                    <ul>
+                        <li>Dólar</li>
+                        <li>Euro</li>
+                        <li>Yen(Japonés)</li>
+                        <li>Dólar de Hong Kong</li>
+                    </ul>
+                </li>
+                <li class="contenedor_dato">(Notas: Las equivalencias deberán definirse dentro del programa. El cuadro de dialogo para seleccionar que sea usando botones: Dólar, Euro, Yen, DolarHK)</li>
+            </ul>
+        </div>
+        <div class="contenedor_info">
+            <div class="contenedor_java">
+                <textarea class="contenedor_java" name="java" rows="25" cols="60">
+package Tarea9;
+
+import javax.swing.JOptionPane;
+
+public class ConvMond{
+
+    public static void main(String[] arg) {
+    // Opciones del menu
+        String[] option = {"Cerrar","D\u00f3lar","Euro","Yen(Japon\u00e9s) ","DolarHK"};
+    // Ventana del menu
+        int Dato1 = JOptionPane.showOptionDialog(null, "Eliga la moneda a la cual convertiras: ", "Menu",
+            JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, option, option[0]);
+    // Mensaje para comprobar que el menu salio bien
+    // JOptionPane.showMessageDialog(null,"Boton seleccionado: "+ Dato1);
+    //Entrada de datos
+        String ent = JOptionPane.showInputDialog("Ingresa la cantidad de pesos mexianos que va convertir: $");
+        float Mond = Float.parseFloat(ent);
+    // Deciciones
+        switch(Dato1){
+            case 1:{String val = JOptionPane.showInputDialog("Ingresa el valor actual de 1 dolar en pesos mexicanos: $");
+                    double conv = Mond / Double.parseDouble(val); 
+                    JOptionPane.showMessageDialog(null,"La cantidad de: $"+ Mond +" pesos mexicanos en dolares serian: "+ conv +".");
+                    }             
+                break;
+            case 2:{String val = JOptionPane.showInputDialog("Ingresa el valor actual de 1 euro en pesos mexicanos: $");
+                    double conv = Mond / Double.parseDouble(val); 
+                    JOptionPane.showMessageDialog(null,"La cantidad de: $"+ Mond +" pesos mexicanos en euros serian: "+ conv +".");
+                    }             
+                break;
+            case 3:{String val = JOptionPane.showInputDialog("Ingresa el valor actual de 1 yen(japones) en pesos mexicanos: $");
+                    double conv = Mond / Double.parseDouble(val); 
+                    JOptionPane.showMessageDialog(null,"La cantidad de: $"+ Mond +" pesos mexicanos en yens serian: "+ conv +".");
+                    }             
+                break;
+            case 4:{String val = JOptionPane.showInputDialog("Ingresa el valor actual de 1 dolar de hong Kong en pesos mexicanos: $");
+                    double conv = Mond / Double.parseDouble(val); 
+                    JOptionPane.showMessageDialog(null,"La cantidad de: $"+ Mond +" pesos mexicanos en dolaresHK serian: "+ conv +".");
+                    }             
+                break;        
+            default:
+                break;
+        }                    
+    }
+}
+                </textarea>
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea9_J1.jpg"alt="" srcset="">
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea9_J2.jpg" alt="" srcset="">
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea9_J3.jpg" alt="" srcset="">
+            </div>
+            <div class="contenedor_textoJav">
+                Programa Codificado en Java
+            </div>
+            <div class="contenedor_ruby">
+                <textarea class="contenedor_rubby" name="Ruby" rows="25" cols="60">
+puts("Elige la moneda a la que deseas cambiar:")
+printf("1.- Dólar\n2.- Euro\n3.- Yen\n4.- DolarHK\n\n")
+mon = gets().to_i
+printf("Ingresa la cantidad de pesos mexicanos que vas a convertir: $")
+cant = gets.to_f
+case mon
+    when 1
+        printf("Ingresa el valor de 1 Dólar actual en pesos mexicanos: $")
+        val=gets.to_f
+        conv =(cant / val).to_s
+        puts("La cantidad de: $ #{cant} pesos mexicanos, ahora es la cantidad de: "+conv+" dolares") 
+    when 2
+        printf("Ingresa el valor de 1 Euro actual en pesos mexicanos: $")
+        val=gets.to_f
+        conv = (cant / val).to_s
+        puts("La cantidad de: $ #{cant} pesos mexicanos, ahora es la cantidad de: "+conv+" euros") 
+    when 3
+        printf("Ingresa el valor de 1 Yen actual en pesos mexicanos: $")
+        val=gets.to_f
+        conv = (cant / val).to_s
+        puts("La cantidad de: $ #{cant} pesos mexicanos, ahora es la cantidad de: "+conv+" yens") 
+    when 4
+        printf("Ingresa el valor de 1 Dolar de Hong Kong actual en pesos mexicanos: $")
+        val=gets.to_f
+        conv = (cant / val).to_s
+        puts("La cantidad de: $ #{cant} pesos mexicanos, ahora es la cantidad de: "+conv+" dolaresHK")  
+        
+    else
+        printf ("La opcion que elegiste no esta en el menu de opciones.")
+end                    
+                </textarea>
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea9_R1.jpg" alt="" srcset="">
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea9_R2.jpg" alt="" srcset="">
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea9_R3.jpg" alt="" srcset="">
+            </div>
+            <div class="contenedor_textoRub">
+                Programa Codificado en Ruby
+            </div>
+        </div>
+        <div class="contenedor_boton">
+            <button class="contenedor_btn"><a href="../../Tareas/MenuTareas.html">Menu Tareas</a></button>
+        </div>    
+        <div class="contenedor_boton">
+            <button class="contenedor_btn"><a href="../../Tareas/Tarea8/Tarea8.html">Tarea 8</a></button>
+        </div>
+        <div class="contenedor_boton">  
+            <button class="contenedor_btn"><a href="../../Tareas/Tarea10/Tarea10.html">Tarea 10</a></button>
+        </div>
+    </div>
+</body>
+</html>

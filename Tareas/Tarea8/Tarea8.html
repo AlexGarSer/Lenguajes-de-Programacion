@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/styleT8.css">
+    <title>Tarea 8</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="contenedor_cabecera">
+            <ul class="contenedor_instrucciones">Tarea #8   Conversión de Temperatura
+                <li class="contenedor_dato">Elabore un programa en JAVA Y RUBY que mediante un Menú de opciones permita calcular la conversión de escala de temperatura:
+                    <ul>
+                        <li>De grados Centígrados a grados Farenheit</li>
+                        <li>De grados Farenheit a grados Centígrados</li>
+                    </ul>
+                </li>
+                <li class="contenedor_dato">(Nota: El cuadro de dialogo para seleccionar que sea usando botones: °C -> °F y otro °F -> °C)</li>
+            </ul>
+        </div>
+        <div class="contenedor_info">
+            <div class="contenedor_java">
+                <textarea class="contenedor_java" name="java" rows="25" cols="60">
+package Tarea8;
+
+import javax.swing.JOptionPane;
+
+public class ConvTemp{
+
+    public static void main(String[] arg) {
+    // Opciones del menu
+        String[] option = { "Cerrar", "Cº --> Fº", "Fº --> Cº" };
+    // Ventana del menu
+        int Dato2 = JOptionPane.showOptionDialog(null, "Eliga un tipo de operacion a realizar: ", "Menu",
+            JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, option, option[0]);
+    // Mensaje para comprobar que el menu salio bien
+    // JOptionPane.showMessageDialog(null,"Boton seleccionado: "+ Dato1);
+    //Entrada de datos
+        String ent = JOptionPane.showInputDialog("Ingresa la temperatura");
+        float Dato1 = Float.parseFloat(ent);
+        
+        if (Dato2==1){float res1 = (float) (Dato1 * (1.8) + 32);
+                        JOptionPane.showMessageDialog(null, "La temperatura seria de: "+ res1 + "ºF");}
+            else {float res2 = (float) ((Dato1 - 32) * (0.55));
+                    JOptionPane.showMessageDialog(null, "La temperatura seria de: "+ res2 + "ºC");}
+    }
+}
+                </textarea>
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea8_J1.jpg"alt="" srcset="">
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea8_J2.jpg" alt="" srcset="">
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea8_J3.jpg" alt="" srcset="">
+            </div>
+            <div class="contenedor_textoJav">
+                Programa Codificado en Java
+            </div>
+            <div class="contenedor_ruby">
+                <textarea class="contenedor_rubby" name="Ruby" rows="25" cols="60">
+Op1 = " 1.- Cº --> Fº"
+Op2 = " 2.- Fº --> Cº"
+puts("Ingrese la opcion de la convercion a realizar: "+Op1+Op2)
+Dat1 = gets.to_i
+if (Dat1==1)
+        puts("Ingrese la temperatura a convertir a Fº: ")
+        val1= gets.to_i
+        res1=(val1.to_f * (1.8) + 32).to_s
+        puts("La temperatura seria de: "+ res1 + "ºF")
+else 	
+        puts("Ingrese la temperatura a convertir a Cº: ")
+        val1= gets.to_i
+        res1=((val1.to_f - 32) * (0.55)).to_s
+        puts("La temperatura seria de: "+ res1 + "ºF")
+end
+                </textarea>
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea8_R1.jpg" alt="" srcset="">
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea8_R2.jpg" alt="" srcset="">
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea8_R3.jpg" alt="" srcset="">
+            </div>
+            <div class="contenedor_textoRub">
+                Programa Codificado en Ruby
+            </div>
+        </div>
+        <div class="contenedor_boton">
+            <button class="contenedor_btn"><a href="../../Tareas/MenuTareas.html">Menu Tareas</a></button>
+        </div>    
+        <div class="contenedor_boton">
+            <button class="contenedor_btn"><a href="../../Tareas/Tarea7/Tarea7.html">Tarea 7</a></button>
+        </div>
+        <div class="contenedor_boton">  
+            <button class="contenedor_btn"><a href="../../Tareas/Tarea9/Tarea9.html">Tarea 9</a></button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/styleT10.css">
+    <title>Tarea 10</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="contenedor_cabecera">
+            <ul class="contenedor_instrucciones">Tarea #10 Serie A
+                <li class="contenedor_dato">Construya un programa en JAVA Y RUBY. Que calcule e imprima la siguiente serie para los N primeros términos</li>
+            </ul>
+        </div>
+        <div class="contenedor_info">
+            <div class="contenedor_java">
+                <textarea class="contenedor_java" name="java" rows="25" cols="60">
+package Tarea10;
+
+import java.util.Scanner;
+
+public class SerieA{
+
+    private static Scanner lector = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        double n, resultado = 0;
+        System.out.println("Ingrese la cantidad de terminos a imprimir de la serie: ");
+        n = lector.nextInt();
+        for (int i=0;i<=n;i++) {
+            resultado = Math.pow(i,(2*i)-1);
+            System.out.println(resultado+", ");
+        }     
+    }    
+}                   
+                </textarea>
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea10_J1.jpg"alt="" srcset="">
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea10_J2.jpg" alt="" srcset="">
+            </div>
+            <div class="contenedor_textoJav">
+                Programa Codificado en Java
+            </div>
+            <div class="contenedor_ruby">
+                <textarea class="contenedor_rubby" name="Ruby" rows="25" cols="60">
+puts("Ingresa el numero de terminos que deses imprimir:")
+n = gets().to_f
+for i in(0..n)
+        exp = 2*i-1.to_f
+        res = (i**exp).to_s
+        puts(res)
+end                              
+                </textarea>
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea10_R1.jpg" alt="" srcset="">
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea10_R2.jpg" alt="" srcset="">
+            </div>
+            <div class="contenedor_textoRub">
+                Programa Codificado en Ruby
+            </div>
+        </div>
+        <div class="contenedor_boton">
+            <button class="contenedor_btn"><a href="../../Tareas/MenuTareas.html">Menu Tareas</a></button>
+        </div>    
+        <div class="contenedor_boton">
+            <button class="contenedor_btn"><a href="../../Tareas/Tarea9/Tarea9.html">Tarea 9</a></button>
+        </div>
+        <div class="contenedor_boton">  
+            <button class="contenedor_btn"><a href="../../Tareas/Tarea11/Tarea11.html">Tarea 11</a></button>
+        </div>
+    </div>
+</body>
+</html>

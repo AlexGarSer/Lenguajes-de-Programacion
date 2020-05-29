@@ -1,0 +1,112 @@
+*{  font-family: "Fortnite";
+    margin:0px 0px 0px;}
+
+/*////////////////////////////////*/
+/*       Fuente de letras         */ 
+@font-face{font-family:"Fortnite";
+    src: url(./Fortnite.woff);}
+/*                                */    
+/*////////////////////////////////*/    
+
+.contenedor{
+    width: 1365px;
+    height:3280px;
+    display: grid;
+    grid-template-columns: 450px 450px 450px;
+    grid-template-rows: 100px 500px 500px 500px 500px 500px 500px 100px;
+    background-color: #14213d;
+    color: #ffffff;
+    gap: 10px;
+}
+
+.contenedor_cabecera{
+    margin: 20px 20px 20px 20px;
+    width: 650px;
+    text-align: center;
+    color: #000000;
+    justify-self: center;
+    font-size: 50px;
+    border-radius: 15px;
+    grid-row: 1;
+    grid-column: 1/4;
+    background-color: #fca311;
+}
+
+.contenedor_foto{
+  margin: 20px 20px 20px 20px;
+  text-align:center;
+  justify-self: stretch;
+  background-color: #222222;
+  border-radius: 25px;
+}
+
+.contenedor_img{
+  margin: 20px 20px 20px 20px;
+  align-items: center;
+  border-radius: 100%;
+  width: 250px;
+  height: 250px;
+}
+
+p{text-align: justify;}
+
+.contenedor_boton{
+    margin-left: 50px;
+    background-color: #222222;
+    border-color: #4CAF50;
+    border-radius: 40px;
+    text-align:center;
+    width: 350px;
+    height: 100px;
+    grid-row: 8;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 25% 50% 25%;
+    transition-duration: 0.4s;
+  }
+  
+.contenedor_boton:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    justify-self: stretch;
+  }
+  
+button{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 20px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;}
+  
+.contenedor_btn{
+        background-color: white; 
+        color: black; 
+        border: 2px solid #4CAF50;
+        border-radius: 10px;
+        font-size: 15px;
+        font-style: none;
+        text-decoration: none;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 2;
+        grid-column-end: 3;
+      }
+      
+.contenedor_btn:hover{
+        background-color: #4CAF50;
+        color: white;
+      }
+  
+a{
+    text-decoration: none;
+    color: #222222;
+  }
+  
+a:hover{
+    color: #ffffff;
+  }

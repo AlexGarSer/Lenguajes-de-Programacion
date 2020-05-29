@@ -1,0 +1,171 @@
+jp../../DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/styleT15.css">
+    <title>Tarea 15</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="contenedor_cabecera">
+            <ul class="contenedor_instrucciones">Tarea #15 Suma de matrices
+                <li class="contenedor_dato">Elaborar un programa en JAVA y RUBY que calcule la suma de dos matrices que ingrese el usuario.</li>
+                <li>(Nota: Validar lo que sea necesario para poder realizar la suma de matrices )</li>
+            </ul>
+        </div>
+        <div class="contenedor_info">
+            <div class="contenedor_java">
+                <textarea class="contenedor_java" name="java" rows="25" cols="60">
+package Tarea15;
+
+import java.util.*;
+
+public class SuMa{
+     public static void main (String[]Args){
+         
+        Scanner dato = new Scanner (System.in);
+
+                    System.out.print("Escribe la cantidad de filas de la 1º Matriz:[?]");
+                    int a1= dato.nextInt();
+        
+                    System.out.print("Escribe la cantidad de columnas de la 1º Matriz:["+a1+"]");
+                    int a2= dato.nextInt();        
+
+                    System.out.print("Escribe la cantidad de filas de la 2º Matriz:[?]");
+                    int b1= dato.nextInt();
+        
+                    System.out.print("Escribe la cantidad de columnas de la 2º Matriz:["+b1+"]");
+                    int b2= dato.nextInt();
+
+                    if (a1 != b1 | a2 != b2) {  System.out.println("La suma de matrices no se puede realizar ya que las matrices son de orden distinto");
+                    }
+                    else{
+
+                    int matriza[][] = new int [a1][a2];
+                    int matrizb[][] = new int [b1][b2];
+                    int matrizc[][] = new int [a1][b2];
+                    int i, j;
+        
+                    System.out.println("Datos de la Matriz A :");
+         
+                    for (i=0; i<=(a1-1); i++){
+                        for (j=0; j<=(a2-1); j++){
+                            System.out.print("Escribir valor " + i + " , " + j + " : ");
+                            matriza [i][j]= dato.nextInt();
+                        }
+                    }
+            
+                    System.out.println("Datos de la Matriz B :");
+            
+                    for (i=0; i<=(b1-1); i++){
+                        for (j=0; j<=(b2-1); j++){
+                            System.out.print("Escribir valor " + i + " , " + j + " : ");
+                            matrizb [i][j]= dato.nextInt();
+                        }
+                    }
+
+                    for (i=0; i<=(a1-1); i++){
+                        for (j=0; j<=(b2-1); j++){
+                            matrizc [i][j]= matriza[i][j]+matrizb[i][j];
+                        }
+                    }                     
+
+                    System.out.println("Matriz resultante de la suma :");
+                    for (i=0;i<=(a1-1);i++){
+                            for (j=0;j<=(b1-1);j++) {
+                                System.out.print(matrizc[i][j] + " ");
+                            }
+                            System.out.println("");
+                            
+                    }                    
+        }
+    }
+}
+                </textarea>
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea15_J1.jpg"alt="" srcset="">
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea15_J2.jpg" alt="" srcset="">
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea15_J3.jpg" alt="" srcset="">
+            </div>
+            <div class="contenedor_textoJav">
+                Programa Codificado en Java
+            </div>
+            <div class="contenedor_ruby">
+                <textarea class="contenedor_rubby" name="Ruby" rows="25" cols="60">
+puts("Ingresa la cantidad de filas de la Matriz 1º:[?]")
+a1 = gets().to_i
+puts("Ingresa la cantidad de columnas de la Matriz 1º:[?]")
+a2 = gets().to_i
+puts("Ingresa la cantidad de filas de la Matriz 2º:[?]")
+b1 = gets().to_i
+puts("Ingresa la cantidad de columnas de la Matriz 2º:[?]")
+b2 = gets().to_i
+
+if (a1 != b1 || a2 != b2)
+    puts("La suma de matrices no se puede realizar.\n Las matrices que ingresaste son de orden distinto.")
+else 
+
+    matriza = Array.new(a1){Array.new(a2)}
+    matrizb = Array.new(b1){Array.new(b2)}
+    matrizc = Array.new(a1){Array.new(b2)}
+    
+    puts("Ingresa los datos de la 1º Matriz.")
+    for i in (0...a1)
+        for j in (0...a2)
+            print("Ingresa los datos: [#{i+1}][#{j+1}]:")
+            matriza[i][j] = gets().to_i
+        end
+    end
+    puts("Ingresa los datos de la 2º Matriz.")
+    for i in (0...b1)
+        for j in (0...b2)
+            print("Ingresa los datos: [#{i+1}][#{j+1}]:")
+            matrizb[i][j] = gets().to_i
+        end
+    end
+    for i in (0...a1)
+        for j in (0...a2)
+            matrizc[i][j] = matriza[i][j] + matrizb[i][j]
+        end
+    end
+    puts("Matriz resultante de la suma es:")
+    for i in (0...a1)
+        for j in (0...b2)
+            print("#{matrizc[i][j]} ")
+        end
+        puts()
+    end
+end
+                </textarea>
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea15_R1.jpg" alt="" srcset="">
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea15_R2.jpg" alt="" srcset="">
+            </div>
+            <div class="contenedor_foto">
+                <img class="contenedor_img" src="../../Imagenes/codigos/Tarea15_R3.jpg" alt="" srcset="">
+            </div>
+            <div class="contenedor_textoRub">
+                Programa Codificado en Ruby
+            </div>
+        </div>
+        <div class="contenedor_boton">
+            <button class="contenedor_btn"><a href="../../Tareas/MenuTareas.html">Menu Tareas</a></button>
+        </div>    
+        <div class="contenedor_boton">
+            <button class="contenedor_btn"><a href="../../Tareas/Tarea14/Tarea14.html">Tarea 14</a></button>
+        </div>
+        <div class="contenedor_boton">  
+            <button class="contenedor_btn"><a href="../../Tareas/Tarea16/Tarea16.html">Tarea 16</a></button>
+        </div>
+    </div>
+</body>
+</html>
